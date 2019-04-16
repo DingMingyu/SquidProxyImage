@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
 COPY passwd /etc/squid/passwd
 COPY squid.conf /etc/squid/squid.conf
 COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
 
 RUN useradd -m -p $(openssl passwd -1 Passw0rd) user1
 
